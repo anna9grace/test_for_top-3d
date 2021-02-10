@@ -1,0 +1,100 @@
+.video {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -0.3% 105px -0.3%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  font-family: $additional-font-family1;
+  background-color: $bg-color;
+}
+
+.video__video-item {
+  width: 100%;
+  height: 100%;
+}
+
+.video__title {
+  @include font-sizes(36px, 43px, 400);
+  margin: 0;
+}
+
+.video__buttons {
+  @include sizes(80px, 39px);
+  display: flex;
+  margin: 0;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  align-self: center;
+  overflow: hidden;
+}
+
+.video__btn {
+  position: relative;
+  flex-basis: 50%;
+  flex-grow: 1;
+  padding: 0;
+  border: none;
+  background: none;
+
+  &::after {
+    @include arrow-mark(13px, 13px, 45deg, $border-color);
+  }
+
+  &:first-of-type {
+    &::after {
+      top: 12px;
+      left: 16px;
+    }
+  }
+
+  &:last-of-type {
+    border-right: 1px solid $border-color;
+    transform: rotate(180deg);
+
+    &::after {
+      top: 12px;
+      right: 9px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-accent-color;
+    outline: none;
+  }
+
+  &:active {
+    background-color: transparentize($main-accent-color, 0.4);
+  }
+}
+
+.video__wrapper {
+  @include list-reset();
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 59px;
+}
+
+.video__item {
+  max-width: 47%;
+  overflow: hidden;
+}
+
+@media (max-width: $max-tablet-width) {
+  .video__wrapper {
+    overflow: hidden;
+  }
+
+  .video__item {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .video__title {
+    @include font-sizes(28px, 36px, 400);
+  }
+}

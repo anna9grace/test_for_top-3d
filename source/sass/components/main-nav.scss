@@ -1,0 +1,35 @@
+.main-nav {
+  @include list-reset();
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.main-nav__item {
+  max-width: 150px;
+  margin: 0 60px 22px 0;
+  flex-grow: 1;
+
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .main-nav {
+    justify-content: space-between;
+  }
+
+  .main-nav__item {
+    flex-basis: 50%;
+    max-width: 200px;
+    margin: 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .main-nav__link {
+    display: block;
+    padding: 10px 5% 10px 0;
+  }
+}

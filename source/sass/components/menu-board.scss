@@ -1,0 +1,159 @@
+.menu-board {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+.menu-board__wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 902px;
+  align-items: center;
+  margin-bottom: 11px;
+  flex-grow: 1;
+}
+
+.menu-board__logo {
+  display: flex;
+  justify-content: space-between;
+  width: 216px;
+}
+
+.menu-board__logo-image {
+  @include sizes(64px, 73px);
+}
+
+.menu-board__logo-text {
+  width: 133px;
+  margin-top: 18px;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.menu-board__logo-text span {
+  color: $text-accent-color;
+}
+
+.menu-board__yandex-market {
+  @include sizes(105px, 60px);
+  padding: 5px 12px;
+  box-shadow: 0 4px 16px transparentize($main-color-dark, 0.84);
+  border-radius: 8px;
+  margin: 0 10px;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 16px transparentize($main-color-dark, 0.5);
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.menu-board__search {
+  flex-grow: 1;
+  max-width: 521px;
+  margin-left: 7px;
+}
+
+.menu-board__search-link {
+  display: none;
+}
+
+.menu-board__user {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 22.3%;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom: 11px;
+}
+
+.menu-board__enter {
+  width: 83px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: auto 0 20px 0;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $main-accent-color;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.menu-board__cart {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 130px;
+  padding: 6px 10px;
+  margin: auto 0 20px 25px;
+}
+
+.menu-board__cart span {
+  margin-left: 5px;
+}
+
+.menu-board__btn {
+  display: none;
+}
+
+
+@media (max-width: $max-tablet-width) {
+  .menu-board {
+    flex-wrap: nowrap;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .menu-board__cart-text,
+  .menu-board__yandex-market {
+    display: none;
+  }
+
+  .menu-board__cart {
+    width: 45px;
+    min-width: auto;
+    flex-grow: 0;
+    margin-left: 10px;
+  }
+}
+
+
+@media (max-width: $max-mobile-width) {
+  .menu-board__logo-text,
+  .menu-board .menu-board__search-form {
+    display: none;
+  }
+
+  .menu-board__logo {
+    width: auto;
+  }
+
+  .menu-board__search-link {
+    display: block;
+    color: $main-accent-color;
+
+    &:hover,
+    &:focus {
+      color: darken($main-accent-color, 15%);
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

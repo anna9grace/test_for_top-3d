@@ -1,0 +1,28 @@
+.container {
+  padding-left: 7.36%;
+  padding-right: 7.36%;
+
+  &--video {
+    padding-left: 9.6%;
+    padding-right: 9.6%;
+  }
+}
+
+@media (max-width: $max-tablet-width) {
+  .container {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+
+    &--video {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
+}

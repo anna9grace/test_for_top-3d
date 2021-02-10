@@ -1,0 +1,97 @@
+.promo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 51px;
+  font-family: $additional-font-family2;
+  letter-spacing: -0.7px;
+}
+
+.promo__work-with-us {
+  @include font-sizes(27px, 32px, 400);
+  display: flex;
+  flex-direction: column;
+  min-width: 42%;
+  margin-right: auto;
+  font-family: $additional-font-family1;
+  letter-spacing: 0;
+  padding: 22px 40px 22px 0;
+}
+
+.promo__work-text {
+  width: 336px;
+}
+
+.promo__work-btn {
+  @include font-sizes(16px, 19px, 500);
+  width: 280px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding: 12px 10px;
+}
+
+.promo__work-data-agreement {
+  @include font-sizes(14px, 17px, 500);
+  width: 230px;
+  color: $color-medium-light;
+}
+
+.promo__our-company {
+  @include font-sizes(16px, 19px, 500);
+  flex-basis: 54%;
+  color: $color-medium-dark;
+  text-align: justify;
+  flex-grow: 1;
+  max-width: 712px;
+  padding: 32px 0;
+}
+
+.promo__our-company-text {
+  margin-bottom: 19px;
+}
+
+.promo__our-company-link {
+  color: $text-accent-color;
+  text-decoration: underline;
+}
+
+@media (max-width: $max-tablet-width) {
+  .promo {
+    flex-direction: column;
+  }
+
+  .promo__our-company {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
+  .promo__work-with-us {
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .promo__our-company,
+  .promo__work-with-us {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .promo__work-with-us {
+    max-width: 400px;
+  }
+
+  .promo__work-text {
+    @include font-sizes(23px, 28px, 400);
+    width: 100%;
+  }
+
+  .promo__work-btn,
+  .promo__work-data-agreement {
+    width: 100%;
+  }
+}

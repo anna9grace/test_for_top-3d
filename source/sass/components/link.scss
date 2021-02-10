@@ -1,0 +1,27 @@
+.link {
+  border-bottom: 1px solid transparent;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $main-accent-color;
+    border-color: $main-accent-color;
+
+    &::after {
+      border-color: $main-accent-color;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .link {
+    &:hover,
+    &:focus {
+      border-color: transparent;
+    }
+  }
+}

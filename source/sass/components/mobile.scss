@@ -1,0 +1,182 @@
+.mobile {
+  main {
+    margin-top: 100px;
+  }
+
+  &--page-inactive {
+    overflow: hidden;
+  }
+
+  .mobile__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    .mobile__info,
+    .mobile__nav,
+    .mobile__products {
+      width: 320px;
+      padding: 0;
+      margin: 0;
+      background-color: $main-color-light;
+      box-shadow: 1px 1px 1px 1px $border-color;
+      border: none;
+    }
+
+    .mobile__info {
+      flex-direction: column;
+      padding: 0 10px;
+
+      .mobile__info-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 10px 0;
+
+        &:first-of-type {
+          border-bottom: 1px solid transparentize($border-color, 0.65);
+        }
+
+        &:last-of-type > * {
+          margin-left: 0;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .mobile__board {
+      order: -1;
+      background-color: $main-color-light;
+    }
+
+    .mobile__products {
+      padding: 0;
+
+      ul {
+        flex-direction: column;
+      }
+
+      a {
+        padding: 15px 24px 15px 30px;
+      }
+
+      .mobile__products-catalog {
+        position: relative;
+        display: flex;
+        padding: 15px 24px 15px 10px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        &::after {
+          @include arrow-mark(7px, 7px, -45deg, $border-color);
+          right: 11px;
+        }
+
+        &:hover,
+        &:focus {
+          border-color: $main-accent-color;
+        }
+      }
+    }
+
+    .mobile__nav {
+      order: 4;
+
+      ul {
+        flex-direction: column;
+      }
+
+      li {
+        margin: 0;
+        max-width: 100%;
+      }
+
+      a {
+        display: block;
+        padding: 15px 24px 15px 10px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+
+        &:hover,
+        &:focus {
+          border-top: 2px solid $main-accent-color;
+          border-bottom: 2px solid $main-accent-color;
+          margin-top: -1px;
+          margin-bottom: -1px;
+        }
+      }
+    }
+  }
+}
+
+
+.mobile__menu-btn {
+  @include sizes(40px, 40px);
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+  margin: -5px 5px 8px -5px;
+  border: none;
+
+  &--open {
+    background: url("../img/hamburger.svg") center center no-repeat;
+  }
+
+  &--close {
+    background: url("../img/close.svg") center center no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: 1px solid $main-accent-color;
+  }
+
+  &:active {
+    background-color: transparentize(darken($main-accent-color, 10%), 0.4);
+  }
+}
+
+
+@media (max-width: $max-mobile-width) {
+  .mobile {
+    .mobile__menu {
+      height: 100vh;
+      width: 100vw;
+      overflow: scroll;
+      justify-content: flex-start;
+      align-items: stretch;
+
+      .mobile__info,
+      .mobile__nav,
+      .mobile__products {
+        width: 100%;
+        box-shadow: none;
+      }
+
+      .mobile__nav {
+        li {
+          border-color: $border-color;
+        }
+      }
+
+      .mobile__products {
+        li {
+          max-width: 100%;
+        }
+
+        ul a {
+          max-width: 400px;
+        }
+
+        .mobile__products-catalog {
+          border-color: $border-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font-sizes($fsize, $lheight, $fweight) {
+  font-size: $fsize;
+  line-height: $lheight;
+  font-weight: $fweight;
+}
+
+@mixin sizes($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin arrow-mark($width, $height, $degree, $color) {
+  content: "";
+  position: absolute;
+  width: $width;
+  height: $height;
+  transform: rotate($degree);
+  border-left: 2px solid $color;
+  border-bottom: 2px solid $color;
+}
